@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galeri Foto - FMS Surabaya</title>
+    <meta name="description" content="Galeri foto kegiatan dan aktivitas FMS Surabaya. Lihat dokumentasi program komunitas, workshop, dan berbagai acara organisasi kami." />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Ffmssuraba9497back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+</head>
+<body class="bg-background">
+    <!-- Header Section -->
+    <header class="bg-surface shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <svg class="h-10 w-10 text-primary" viewBox="0 0 40 40" fill="currentColor">
+                            <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M12 16h16v2H12zm0 4h16v2H12zm0 4h12v2H12z"/>
+                            <circle cx="20" cy="12" r="3" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <h1 class="text-xl font-bold text-primary">FMS Surabaya</h1>
+                        <p class="text-xs text-text-secondary">Forum Mahasiswa Sulawesi Utara</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="homepage.html" class="text-text-secondary hover:text-primary transition-colors duration-200">Beranda</a>
+                    <a href="about_us.html" class="text-text-secondary hover:text-primary transition-colors duration-200">Tentang Kami</a>
+                    <a href="events_and_activities.html" class="text-text-secondary hover:text-primary transition-colors duration-200">Kegiatan</a>
+                    <a href="photo_gallery.html" class="text-primary font-semibold border-b-2 border-primary pb-1">Galeri</a>
+                    <a href="contact_us.html" class="text-text-secondary hover:text-primary transition-colors duration-200">Kontak</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-text-secondary hover:text-primary p-2">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu" class="md:hidden hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 bg-surface border-t border-border">
+                    <a href="homepage.html" class="block px-3 py-2 text-text-secondary hover:text-primary hover:bg-gray-50 rounded-md transition-colors duration-200">Beranda</a>
+                    <a href="about_us.html" class="block px-3 py-2 text-text-secondary hover:text-primary hover:bg-gray-50 rounded-md transition-colors duration-200">Tentang Kami</a>
+                    <a href="events_and_activities.html" class="block px-3 py-2 text-text-secondary hover:text-primary hover:bg-gray-50 rounded-md transition-colors duration-200">Kegiatan</a>
+                    <a href="photo_gallery.html" class="block px-3 py-2 text-primary font-semibold bg-primary-50 rounded-md">Galeri</a>
+                    <a href="contact_us.html" class="block px-3 py-2 text-text-secondary hover:text-primary hover:bg-gray-50 rounded-md transition-colors duration-200">Kontak</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-hero text-white overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="../assets/images/fix.jpg" alt="Galeri Kegiatan FMS Surabaya" class="w-full h-full object-cover opacity-30" loading="lazy" onerror="this.src='https://images.unsplash.com/" />
+        </div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+            <div class="text-center">
+                <h1 class="text-3xl md:text-5xl font-bold mb-4 text-balance">
+                    Galeri Foto FMS Surabaya
+                </h1>
+                <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto text-balance opacity-90">
+                    Dokumentasi visual dari berbagai kegiatan dan program yang telah dilaksanakan FMS Surabaya dalam membangun komunitas yang kuat.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search and Filter Section -->
+    <section class="py-8 bg-surface border-b border-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                <!-- Search Bar -->
+                <div class="relative flex-1 max-w-md">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <svg class="h-5 w-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                    </div>
+                    <input type="text" id="search-input" placeholder="Cari berdasarkan nama acara atau tanggal..." class="form-input pl-10 pr-4 py-3 w-full" />
+                </div>
+
+                <!-- Filter Categories -->
+                <div class="flex items-center gap-4">
+                    <!-- Desktop Filter Dropdown -->
+                    <div class="hidden lg:block relative">
+                        <select id="category-filter" class="form-input pr-10 py-3 appearance-none cursor-pointer">
+                            <option value="all">Semua Kategori</option>
+                            <option value="community-service">Layanan Masyarakat</option>
+                            <option value="workshops">Workshop</option>
+                            <option value="meetings">Pertemuan</option>
+                            <option value="celebrations">Perayaan</option>
+                        </select>
+                        <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                            <svg class="h-5 w-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Reset Filter Button -->
+                    <button id="reset-filter" class="btn-outline px-4 py-3 flex items-center">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                        </svg>
+                        Reset
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Filter Chips -->
+            <div class="lg:hidden mt-4">
+                <div class="flex overflow-x-auto space-x-3 pb-2 scrollbar-hide">
+                    <button class="filter-chip active" data-category="all">Semua</button>
+                    <button class="filter-chip" data-category="community-service">Layanan Masyarakat</button>
+                    <button class="filter-chip" data-category="workshops">Workshop</button>
+                    <button class="filter-chip" data-category="meetings">Pertemuan</button>
+                    <button class="filter-chip" data-category="celebrations">Perayaan</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section class="py-16 lg:py-24 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Gallery Stats -->
+            <div class="text-center mb-12">
+                <div class="grid grid-cols-3 gap-4 max-w-md mx-auto">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-primary" id="total-photos">156</div>
+                        <div class="text-sm text-text-secondary">Total Foto</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-secondary" id="total-events">24</div>
+                        <div class="text-sm text-text-secondary">Acara</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-accent" id="total-albums">8</div>
+                        <div class="text-sm text-text-secondary">Album</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Photos Section -->
+            <div class="mb-16">
+                <h2 class="text-2xl md:text-3xl font-bold text-text-primary mb-8 text-center">Foto Unggulan</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="featured-photo-card group cursor-pointer" data-category="community-service" data-event="Bakti Sosial Ramadan 2025" data-date="2025-03-15" data-participants="150">
+                        <div class="relative overflow-hidden rounded-xl aspect-w-16 aspect-h-12">
+                            <img src="../assets/images/kumpul.jpg" alt="Bakti Sosial Ramadan 2025" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute bottom-4 left-4 right-4 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
+                                <h3 class="font-semibold text-lg mb-1">First Meet</h3>
+                                <p class="text-sm opacity-90">15 Maret 2025 • 150 peserta</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="featured-photo-card group cursor-pointer" data-category="workshops" data-event="Workshop Kewirausahaan Digital" data-date="2025-02-28" data-participants="75">
+                        <div class="relative overflow-hidden rounded-xl aspect-w-16 aspect-h-12">
+                            <img src="../assets/images/pelantikanjpg.jpg" alt="Workshop Kewirausahaan Digital" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute bottom-4 left-4 right-4 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
+                                <h3 class="font-semibold text-lg mb-1">Pelantikan Kepengurusan</h3>
+                                <p class="text-sm opacity-90">28 Februari 2025 • 75 peserta</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="featured-photo-card group cursor-pointer md:col-span-2 lg:col-span-1" data-category="celebrations" data-event="HUT FMS Surabaya ke-5" data-date="2025-01-20" data-participants="200">
+                        <div class="relative overflow-hidden rounded-xl aspect-w-16 aspect-h-12">
+                            <img src="../assets/images/makang.jpg" alt="HUT FMS Surabaya ke-5" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute bottom-4 left-4 right-4 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
+                                <h3 class="font-semibold text-lg mb-1">Makang</h3>
+                                <p class="text-sm opacity-90">20 Januari 2025 • 200 peserta</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Photo Gallery Grid -->
+            <div class="mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-text-primary mb-8 text-center">Semua Foto</h2>
+                <div id="photo-gallery" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <!-- Photo items will be dynamically loaded here -->
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center">
+                <button id="load-more-btn" class="btn-primary px-8 py-3">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                    </svg>
+                    Muat Lebih Banyak
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="relative max-w-4xl w-full">
+                <!-- Close Button -->
+                <button id="close-lightbox" class="absolute top-4 right-4 text-white hover:text-gray-300 z-10">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+
+                <!-- Navigation Arrows -->
+                <button id="prev-photo" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 z-10">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                    </svg>
+                </button>
+                <button id="next-photo" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 z-10">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </button>
+
+                <!-- Main Image -->
+                <div class="text-center">
+                    <img id="lightbox-image" src alt class="max-w-full max-h-[70vh] object-contain mx-auto" />
+                </div>
+
+                <!-- Photo Info -->
+                <div class="text-white text-center mt-6">
+                    <h3 id="lightbox-title" class="text-xl font-semibold mb-2"></h3>
+                    <p id="lightbox-details" class="text-gray-300 mb-4"></p>
+                    
+                    <!-- Action Buttons -->
+                    <div class="flex justify-center space-x-4">
+                        <button id="share-photo" class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg hover:bg-white/30 transition-colors duration-200">
+                            <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/>
+                            </svg>
+                            Bagikan
+                        </button>
+                        <button id="download-photo" class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg hover:bg-white/30 transition-colors duration-200">
+                            <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                            </svg>
+                            Unduh
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-text-primary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Organization Info -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center mb-6">
+                        <svg class="h-10 w-10 text-primary-300" viewBox="0 0 40 40" fill="currentColor">
+                            <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M12 16h16v2H12zm0 4h16v2H12zm0 4h12v2H12z"/>
+                            <circle cx="20" cy="12" r="3" fill="currentColor"/>
+                        </svg>
+                        <div class="ml-3">
+                            <h3 class="text-xl font-bold">FMS Surabaya</h3>
+                            <p class="text-sm text-gray-300">Forum Mahasiswa Sulawesi Utara</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6 max-w-md">
+                        Organisasi regional yang berkomitmen membangun Surabaya melalui partisipasi aktif masyarakat dan program-program inovatif untuk kemajuan bersama.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="javascript:void(0)" class="text-gray-300 hover:text-primary-300 transition-colors duration-200">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="text-gray-300 hover:text-primary-300 transition-colors duration-200">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="text-gray-300 hover:text-primary-300 transition-colors duration-200">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Tautan Cepat</h4>
+                    <ul class="space-y-3">
+                        <li><a href="homepage.html" class="text-gray-300 hover:text-primary-300 transition-colors duration-200">Beranda</a></li>
+                        <li><a href="about_us.html" class="text-gray-300 hover:text-primary-300 transition-colors duration-200">Tentang Kami</a></li>
+                        <li><a href="events_and_activities.html" class="text-gray-300 hover:text-primary-300 transition-colors duration-200">Kegiatan</a></li>
+                        <li><a href="photo_gallery.html" class="text-gray-300 hover:text-primary-300 transition-colors duration-200">Galeri</a></li>
+                        <li><a href="contact_us.html" class="text-gray-300 hover:text-primary-300 transition-colors duration-200">Kontak</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Kontak</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-primary-300 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            <p class="text-gray-300 text-sm">
+                                Jl. Pemuda No. 123<br />
+                                Surabaya, Jawa Timur 60271
+                            </p>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-primary-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                            </svg>
+                            <p class="text-gray-300 text-sm">(031) 123-4567</p>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-primary-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            <p class="text-gray-300 text-sm">info@fmssurabaya.org</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-12 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-300 text-sm">
+                        © 2025 FMS Surabaya. Hak Cipta Dilindungi.
+                    </p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="javascript:void(0)" class="text-gray-300 hover:text-primary-300 text-sm transition-colors duration-200">Kebijakan Privasi</a>
+                        <a href="javascript:void(0)" class="text-gray-300 hover:text-primary-300 text-sm transition-colors duration-200">Syarat & Ketentuan</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .filter-chip {
+            @apply px-4 py-2 rounded-full border border-gray-300 text-sm font-medium text-text-secondary whitespace-nowrap transition-all duration-200;
+            @apply hover:border-primary hover:text-primary;
+        }
+        
+        .filter-chip.active {
+            @apply bg-primary text-white border-primary;
+        }
+        
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .photo-item {
+            @apply relative overflow-hidden rounded-lg cursor-pointer group;
+            @apply transition-transform duration-300 hover:scale-105;
+        }
+        
+        .photo-overlay {
+            @apply absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent;
+            @apply opacity-0 group-hover:opacity-100 transition-opacity duration-300;
+        }
+        
+        .photo-info {
+            @apply absolute bottom-3 left-3 right-3 text-white;
+            @apply transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300;
+            @apply opacity-0 group-hover:opacity-100;
+        }
+    </style>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Photo gallery data
+        const photoData = [
+            {
+                id: 1,
+                src: 'https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                title: 'Gotong Royong Bersih Kampung',
+                date: '2025-03-10',
+                category: 'community-service',
+                participants: 85
+            },
+            {
+                id: 2,
+                src: 'https://images.pixabay.com/photo/2016/11/23/15/48/audience-1853662_1280.jpg',
+                title: 'Diskusi Publik Pembangunan Kota',
+                date: '2025-03-05',
+                category: 'meetings',
+                participants: 120
+            },
+            {
+                id: 3,
+                src: 'https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=2949&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+                title: 'Pelatihan Komputer untuk Lansia',
+                date: '2025-02-25',
+                category: 'workshops',
+                participants: 45
+            },
+            {
+                id: 4,
+                src: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                title: 'Festival Budaya Surabaya',
+                date: '2025-02-20',
+                category: 'celebrations',
+                participants: 300
+            },
+            {
+                id: 5,
+                src: 'https://images.pixabay.com/photo/2017/08/06/12/06/people-2591874_1280.jpg',
+                title: 'Donor Darah Massal',
+                date: '2025-02-15',
+                category: 'community-service',
+                participants: 95
+            },
+            {
+                id: 6,
+                src: 'https://images.unsplash.com/photo-1559223607-b4d0555ae227?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+                title: 'Workshop Pengelolaan Keuangan',
+                date: '2025-02-10',
+                category: 'workshops',
+                participants: 60
+            },
+            {
+                id: 7,
+                src: 'https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                title: 'Rapat Koordinasi Bulanan',
+                date: '2025-02-05',
+                category: 'meetings',
+                participants: 35
+            },
+            {
+                id: 8,
+                src: 'https://images.pixabay.com/photo/2016/11/29/06/15/adult-1867743_1280.jpg',
+                title: 'Perayaan Hari Kartini',
+                date: '2025-04-21',
+                category: 'celebrations',
+                participants: 180
+            }
+        ];
+
+        let currentPhotoIndex = 0;
+        let filteredPhotos = [...photoData];
+        let displayedPhotos = [];
+        const photosPerLoad = 8;
+
+        // Initialize gallery
+        function initializeGallery() {
+            displayedPhotos = filteredPhotos.slice(0, photosPerLoad);
+            renderGallery();
+            updateLoadMoreButton();
+        }
+
+        // Render photo gallery
+        function renderGallery() {
+            const gallery = document.getElementById('photo-gallery');
+            gallery.innerHTML = '';
+
+            displayedPhotos.forEach((photo, index) => {
+                const photoElement = document.createElement('div');
+                photoElement.className = 'photo-item';
+                photoElement.innerHTML = `
+                    <img src="${photo.src}" 
+                         alt="${photo.title}" 
+                         class="w-full h-48 md:h-56 object-cover"
+                         loading="lazy"
+                         onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                    <div class="photo-overlay"></div>
+                    <div class="photo-info">
+                        <h4 class="font-semibold text-sm mb-1">${photo.title}</h4>
+                        <p class="text-xs opacity-90">${formatDate(photo.date)} • ${photo.participants} peserta</p>
+                    </div>
+                `;
+                
+                photoElement.addEventListener('click', () => openLightbox(index));
+                gallery.appendChild(photoElement);
+            });
+        }
+
+        // Format date to Indonesian format
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const months = [
+                'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+                'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
+            ];
+            return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
+        }
+
+        // Filter functionality
+        function filterPhotos(category) {
+            if (category === 'all') {
+                filteredPhotos = [...photoData];
+            } else {
+                filteredPhotos = photoData.filter(photo => photo.category === category);
+            }
+            displayedPhotos = filteredPhotos.slice(0, photosPerLoad);
+            renderGallery();
+            updateLoadMoreButton();
+        }
+
+        // Search functionality
+        function searchPhotos(query) {
+            const searchTerm = query.toLowerCase();
+            filteredPhotos = photoData.filter(photo => 
+                photo.title.toLowerCase().includes(searchTerm) ||
+                photo.date.includes(searchTerm)
+            );
+            displayedPhotos = filteredPhotos.slice(0, photosPerLoad);
+            renderGallery();
+            updateLoadMoreButton();
+        }
+
+        // Update load more button visibility
+        function updateLoadMoreButton() {
+            const loadMoreBtn = document.getElementById('load-more-btn');
+            if (displayedPhotos.length >= filteredPhotos.length) {
+                loadMoreBtn.style.display = 'none';
+            } else {
+                loadMoreBtn.style.display = 'inline-flex';
+            }
+        }
+
+        // Load more photos
+        function loadMorePhotos() {
+            const currentLength = displayedPhotos.length;
+            const nextPhotos = filteredPhotos.slice(currentLength, currentLength + photosPerLoad);
+            displayedPhotos = [...displayedPhotos, ...nextPhotos];
+            renderGallery();
+            updateLoadMoreButton();
+        }
+
+        // Lightbox functionality
+        function openLightbox(index) {
+            currentPhotoIndex = index;
+            const photo = displayedPhotos[index];
+            const modal = document.getElementById('lightbox-modal');
+            const image = document.getElementById('lightbox-image');
+            const title = document.getElementById('lightbox-title');
+            const details = document.getElementById('lightbox-details');
+
+            image.src = photo.src;
+            image.alt = photo.title;
+            title.textContent = photo.title;
+            details.textContent = `${formatDate(photo.date)} • ${photo.participants} peserta`;
+
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const modal = document.getElementById('lightbox-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function navigateLightbox(direction) {
+            if (direction === 'next') {
+                currentPhotoIndex = (currentPhotoIndex + 1) % displayedPhotos.length;
+            } else {
+                currentPhotoIndex = currentPhotoIndex === 0 ? displayedPhotos.length - 1 : currentPhotoIndex - 1;
+            }
+            openLightbox(currentPhotoIndex);
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeGallery();
+
+            // Mobile filter chips
+            document.querySelectorAll('.filter-chip').forEach(chip => {
+                chip.addEventListener('click', function() {
+                    document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+                    this.classList.add('active');
+                    filterPhotos(this.dataset.category);
+                });
+            });
+
+            // Desktop filter dropdown
+            document.getElementById('category-filter').addEventListener('change', function() {
+                filterPhotos(this.value);
+            });
+
+            // Search input
+            document.getElementById('search-input').addEventListener('input', function() {
+                searchPhotos(this.value);
+            });
+
+            // Reset filter
+            document.getElementById('reset-filter').addEventListener('click', function() {
+                document.getElementById('search-input').value = '';
+                document.getElementById('category-filter').value = 'all';
+                document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+                document.querySelector('.filter-chip[data-category="all"]').classList.add('active');
+                filterPhotos('all');
+            });
+
+            // Load more button
+            document.getElementById('load-more-btn').addEventListener('click', loadMorePhotos);
+
+            // Lightbox controls
+            document.getElementById('close-lightbox').addEventListener('click', closeLightbox);
+            document.getElementById('prev-photo').addEventListener('click', () => navigateLightbox('prev'));
+            document.getElementById('next-photo').addEventListener('click', () => navigateLightbox('next'));
+
+            // Featured photos lightbox
+            document.querySelectorAll('.featured-photo-card').forEach((card, index) => {
+                card.addEventListener('click', () => {
+                    // Find the photo in the main data array
+                    const eventName = card.dataset.event;
+                    const photoIndex = photoData.findIndex(photo => photo.title === eventName);
+                    if (photoIndex !== -1) {
+                        displayedPhotos = [...photoData]; // Show all photos in lightbox
+                        openLightbox(photoIndex);
+                    }
+                });
+            });
+
+            // Keyboard navigation for lightbox
+            document.addEventListener('keydown', function(e) {
+                const modal = document.getElementById('lightbox-modal');
+                if (!modal.classList.contains('hidden')) {
+                    if (e.key === 'Escape') {
+                        closeLightbox();
+                    } else if (e.key === 'ArrowLeft') {
+                        navigateLightbox('prev');
+                    } else if (e.key === 'ArrowRight') {
+                        navigateLightbox('next');
+                    }
+                }
+            });
+
+            // Close lightbox when clicking outside image
+            document.getElementById('lightbox-modal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeLightbox();
+                }
+            });
+
+            // Share and download functionality
+            document.getElementById('share-photo').addEventListener('click', function() {
+                const photo = displayedPhotos[currentPhotoIndex];
+                if (navigator.share) {
+                    navigator.share({
+                        title: photo.title,
+                        text: `Lihat foto kegiatan FMS Surabaya: ${photo.title}`,
+                        url: window.location.href
+                    });
+                } else {
+                    // Fallback for browsers that don't support Web Share API
+                    const url = encodeURIComponent(window.location.href);
+                    const text = encodeURIComponent(`Lihat foto kegiatan FMS Surabaya: ${photo.title}`);
+                    window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank');
+                }
+            });
+
+            document.getElementById('download-photo').addEventListener('click', function() {
+                const photo = displayedPhotos[currentPhotoIndex];
+                const link = document.createElement('a');
+                link.href = photo.src;
+                link.download = `${photo.title.replace(/\s+/g, '_')}.jpg`;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            });
+        });
+
+        // Touch/swipe support for mobile lightbox
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.getElementById('lightbox-modal').addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.getElementById('lightbox-modal').addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // Swipe left - next photo
+                    navigateLightbox('next');
+                } else {
+                    // Swipe right - previous photo
+                    navigateLightbox('prev');
+                }
+            }
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>
